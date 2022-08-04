@@ -8,8 +8,8 @@ export class ServicesController {
 
   constructor(private readonly kafkaService: KafkaService) {}
 
-  @Post(endpoints.E_ORGANICO_MARKET_SERVICE)
+  @Post(endpoints.E_ORGANICO_API_SERVICE)
   public async marketService(): Promise<void> {
-    await this.kafkaService.send(topics.E_ORGANICO_MARKET_SERVICE, this.message);
+    await this.kafkaService.send(topics.E_ORGANICO_API_SERVICE, this.message);
   }
 }

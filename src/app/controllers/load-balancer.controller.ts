@@ -8,13 +8,8 @@ export class LoadBalancerController {
 
   constructor(private readonly kafkaService: KafkaService) {}
 
-  @Post(endpoints.LOAD_BALANCER_E_ORGANICO_MARKET_SERVICE)
-  public async loadBalancerMarketService(): Promise<void> {
-    await this.kafkaService.send(topics.LOAD_BALANCER_E_ORGANICO_MARKET_SERVICE, this.message);
-  }
-
-  @Post(endpoints.LOAD_BALANCER_E_ORGANICO_ROOT)
+  @Post(endpoints.LOAD_BALANCER_E_ORGANICO)
   public async loadBalancerRoot(): Promise<void> {
-    await this.kafkaService.send(topics.LOAD_BALANCER_E_ORGANICO_ROOT, this.message);
+    await this.kafkaService.send(topics.LOAD_BALANCER_E_ORGANICO, this.message);
   }
 }
